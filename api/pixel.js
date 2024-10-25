@@ -3,9 +3,9 @@ import { google } from 'googleapis';
 const auth = new google.auth.GoogleAuth({
   credentials: {
     client_email: process.env.CLIENT_EMAIL,
-    private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Đảm bảo thay thế \\n thành \n
+    private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
   },
-  scopes: ['https://www.googleapis.com/auth/spreadsheets'], // Quyền truy cập
+  scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
 const sheets = google.sheets({ version: 'v4', auth });
