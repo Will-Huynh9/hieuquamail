@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   try {
     // Kết nối đến MongoDB
     await client.connect();
-    const database = client.db('email_tracking'); // Tên database
+    const database = client.db('emailtrack'); // Tên database
     const collection = database.collection('logs'); // Tên collection
 
     const logEntry = {
