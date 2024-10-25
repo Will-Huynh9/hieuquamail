@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "pixel.js",
   "scripts": {
-    "start": "node pixel.js" // Hoặc tên file chính của bạn
+    "start": "node pixel.js"
   },
   "dependencies": {
     "googleapis": "^39.2.0",
-    "express": "^4.17.1" // Nếu sử dụng Express
+    "express": "^4.17.1"
   }
 }
