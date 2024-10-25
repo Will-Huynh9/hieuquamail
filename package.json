@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "api/pixel.js",
   "dependencies": {
-    "googleapis": "^39.2.0"
+    "googleapis": "^109.0.0"
   }
 }
