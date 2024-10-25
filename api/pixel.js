@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   console.log(`Tracking pixel loaded - IP: ${ip}, User-Agent: ${userAgent}, Time: ${timestamp}`);
 
   try {
-    const spreadsheetId = 'YOUR_SPREADSHEET_ID'; // ID của Google Sheet
+    const spreadsheetId = '1JYLbO9HzZfKCtgNxqqz7a7N53xR9_4uLfq2DzX4C0xs'; // ID của Google Sheet
     const range = 'Sheet1!A:C'; // Vùng mà bạn muốn ghi dữ liệu vào
 
     const values = [
