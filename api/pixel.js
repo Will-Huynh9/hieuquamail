@@ -1,8 +1,10 @@
 import { google } from 'googleapis';
-import { readFileSync } from 'fs';
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'path/to/your/service-account-file.json', // Đường dẫn tới file JSON
+  credentials: {
+    client_email: process.env.CLIENT_EMAIL,
+    private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Đảm bảo thay thế \\n thành \n
+  },
   scopes: ['https://www.googleapis.com/auth/spreadsheets'], // Quyền truy cập
 });
 
@@ -16,7 +18,7 @@ export default async function handler(req, res) {
   console.log(`Tracking pixel loaded - IP: ${ip}, User-Agent: ${userAgent}, Time: ${timestamp}`);
 
   try {
-    const spreadsheetId = '1JYLbO9HzZfKCtgNxqqz7a7N53xR9_4uLfq2DzX4C0xs'; // ID của Google Sheet
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID; // ID của Google Sheet từ biến môi trường
     const range = 'Sheet1!A:C'; // Vùng mà bạn muốn ghi dữ liệu vào
 
     const values = [
