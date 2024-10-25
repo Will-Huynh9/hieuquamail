@@ -1,0 +1,8 @@
+{
+  "name": "hieuquamail",
+  "version": "1.0.0",
+  "main": "api/pixel.js",
+  "dependencies": {
+    "mongodb": "^4.3.0"
+  }
+}
