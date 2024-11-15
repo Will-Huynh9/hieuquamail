@@ -10,6 +10,7 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 
 export default async function handler(req, res) {
+  const { email } = req.query; // Lấy email từ query parameter
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const userAgent = req.headers['user-agent'];
   const timestamp = new Date().toISOString();
@@ -18,10 +19,10 @@ export default async function handler(req, res) {
 
   try {
     const spreadsheetId = process.env.GOOGLE_SHEET_ID; // ID của Google Sheet từ biến môi trường
-    const range = 'Sheet1!A:C'; // Vùng mà bạn muốn ghi dữ liệu vào
+    const range = 'Email03!A:D'; // Vùng mà bạn muốn ghi dữ liệu vào
 
     const values = [
-      [timestamp, ip, userAgent], // Dữ liệu cần ghi
+      [email, timestamp, ip, userAgent], // Dữ liệu cần ghi
     ];
 
     const resource = {
